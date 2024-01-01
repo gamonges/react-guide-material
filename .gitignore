@@ -1,0 +1,30 @@
+# Node.js
+*/node_modules/
+
+# React build
+build/
+
+# Next.js build
+.next/
+
+# Compiled files
+*.log
+*.json
+*.lock
+
+# Dependency directories
+pnpm-lock.yaml
+yarn.lock
+
+# dotenv environment variables file
+.env
+
+# IDE files
+.vscode/
+.idea/
+
+# Mac OS
+.DS_Store
+
+# Windows
+Thumbs.db
