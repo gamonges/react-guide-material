@@ -1,18 +1,16 @@
-import { useContext } from "react";
-import { ThemeContext } from "../contexts/ThemeContext";
+import { useTheme } from "../contexts/ThemeContext";
 
 const Header = () => {
-  const [theme, setTheme] = useContext(ThemeContext);
+  const [theme, setTheme] = useTheme();
   const THEMES = ["light", "dark", "red"];
   const changeTheme = (e) => setTheme(e.target.value);
   return (
     <header className={`content-${theme}`}>
       {THEMES.map((_theme) => {
         return (
-          <label>
+          <label key={_theme}>
             <input
               type="radio"
-              key={_theme}
               value={_theme}
               checked={theme === _theme}
               onChange={changeTheme}
