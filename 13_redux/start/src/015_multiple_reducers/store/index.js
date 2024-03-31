@@ -1,17 +1,19 @@
-import { createStore } from "redux";
+import { createStore, combineReducers } from "redux";
 
 const initialState = 0;
 const reducer = (state = initialState, { type, step }) => {
-    switch (type) {
-      case "+":
-        return state + step;
-      case "-":
-        return state - step;
-      default:
-        return state;
-    }
-  };
+  switch (type) {
+    case "+":
+      return state + step;
+    case "-":
+      return state - step;
+    default:
+      return state;
+  }
+};
 
-export default createStore(
-    reducer
-);
+const reducers = combineReducers({
+  counter: reducer,
+});
+
+export default createStore(reducers);
