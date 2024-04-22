@@ -7,7 +7,11 @@ import reportWebVitals from "./reportWebVitals";
 
 const root = createRoot(document.getElementById("root"));
 
-root.render(<App lectures={lectures} />);
+root.render(
+  <React.StrictMode>
+    <App lectures={lectures} />
+  </React.StrictMode>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
