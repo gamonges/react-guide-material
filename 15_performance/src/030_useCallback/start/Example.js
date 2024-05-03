@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import Child from "./Child";
+import { useCallback } from "react";
 
 const Example = () => {
   console.log("Parent render");
-  
+
   const [countA, setCountA] = useState(0);
   const [countB, setCountB] = useState(0);
 
-  const clickHandler = () => {
+  const clickHandler = useCallback(() => {
     setCountB((pre) => pre + 1);
-  }
+  }, []);
 
   return (
     <div className="parent">
@@ -27,9 +28,9 @@ const Example = () => {
         </div>
       </div>
       <div>
-          <p>ボタンAクリック回数：{countA}</p>
+        <p>ボタンAクリック回数：{countA}</p>
       </div>
-      <Child countB={countB} onClick={clickHandler}/>
+      <Child countB={countB} onClick={clickHandler} />
     </div>
   );
 };
