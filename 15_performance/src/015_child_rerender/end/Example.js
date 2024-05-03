@@ -4,7 +4,7 @@ import Child from "./Child";
 import "./Example.css";
 
 const Example = () => {
-  console.log("Parent render");
+  //  console.log("Parent render");
   const [countA, setCountA] = useState(0);
   const [countB, setCountB] = useState(0);
   return (
