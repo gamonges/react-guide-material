@@ -9,7 +9,6 @@ build/
 
 # Compiled files
 *.log
-*.json
 *.lock
 
 # Dependency directories
