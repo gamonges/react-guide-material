@@ -4,8 +4,8 @@ import BaseErrorBoundary from "./BaseErrorBoundary";
 
 const STORAGE_KEY = "rcg-current-lec-index";
 
-const DynamicLoader = ({ component }) => {
-  const LazyComponent = lazy(() => import(`${component}`));
+const DynamicLoader = ({ lecId, folder }) => {
+  const LazyComponent = lazy(() => import(`./${lecId}/${folder}/Example`));
   return (
     <BaseErrorBoundary>
       <Suspense fallback={<div>Loading...</div>}>
@@ -16,7 +16,7 @@ const DynamicLoader = ({ component }) => {
 };
 
 const App = ({ lectures }) => {
-  /**
+  /**x
    * ローカルストレージより画面復帰時のレクチャーインデックスを取得
    */
   let restoredLecIndx = localStorage.getItem(STORAGE_KEY) ?? 0;
@@ -46,11 +46,11 @@ const App = ({ lectures }) => {
 
       <div className="App-start">
         <h2>練習コード（start）</h2>
-        <DynamicLoader component={`./${lecId}/start/Example`} />
+        <DynamicLoader lecId={lecId} folder={"start"} />
       </div>
       <div className="App-end">
         <h2>完成コード（end）</h2>
-        <DynamicLoader component={`./${lecId}/end/Example`} />
+        <DynamicLoader lecId={lecId} folder={"end"} />
       </div>
     </div>
   );

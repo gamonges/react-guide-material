@@ -1,11 +1,8 @@
-## /endフォルダのテストコードの実行方法
-/endフォルダのテストコードを実行する場合はファイル末尾の_を削除してください。(受講者の方が書いたテストコードの結果と紛らわしいと思いますので、テスト対象にならないように末尾に_を付けています。)
+# React + Vite
 
-Greet.test.js_　-> Greet.test.js
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## /060_async_testはJSON Serverが必要
-立ち上がっていないとエラーになりますので以下のコマンドでJSON Serverを立ち上げてください。
+Currently, two official plugins are available:
 
-``` json-serverの立ち上げコマンド
-npm run json-server
-```
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

@@ -4,7 +4,7 @@ import GetUserData from "./GetUserData";
 import { ENDPOINT_URL } from "../Example";
 import axios from "axios";
 
-jest.mock('axios')
+vi.mock('axios')
 
 describe('GetUserDataコンポーネントの動作確認', () => {
   test('外部データ取得中', async () => {
